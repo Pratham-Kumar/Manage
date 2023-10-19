@@ -1,0 +1,27 @@
+<mvc:View
+    controllerName="com.sap.manage.controller.View2"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+>
+    <App id="app">
+        <f:SimpleForm id="sForm">
+            <f:content>
+                <Label text="product-ID" />
+                <Input value="{ProductID}" />
+                <Label text="Name" />
+                <Input value="{Name}" />
+                <Label text="Price" />
+                <Input value="{Price}" />
+                <Label text="WeightUnit" />
+                <Input value="{WeightUnit}" />
+                <Label text="WeightMeasure" />
+                <Input value="{WeightMeasure}" />
+            </f:content>
+        </f:SimpleForm>
+    </App>
+</mvc:View>

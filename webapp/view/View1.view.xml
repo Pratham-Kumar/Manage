@@ -1,0 +1,86 @@
+<mvc:View
+    controllerName="com.sap.manage.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <content>
+            <Button
+                text="navigation"
+                press="onPress"
+            />
+            <Table
+                items="{/ProductSet}"
+                id="table1"
+                class=""
+            >
+                <headerToolbar>
+                    <Toolbar>
+                        <Title text="Products" />
+                        <ToolbarSpacer />
+                        <SearchField
+                            width="50%"
+                            search="onFilterProducts"
+                        />
+                    </Toolbar>
+                </headerToolbar>
+                <columns>
+                    <Column id="c1">
+                        <Text
+                            text="product-ID"
+                            id="txt1"
+                        />
+                    </Column>
+                    <Column id="c2">
+                        <Text
+                            text="Name"
+                            id="txt2"
+                        />
+                    </Column>
+                    <Column id="c3">
+                        <Text
+                            text="Price"
+                            id="txt3"
+                        />
+                    </Column>
+                    <Column id="c4">
+                        <Text
+                            text="WeightUnit"
+                            id="txt4"
+                        />
+                    </Column>
+                    <Column id="c5">
+                        <Text
+                            text="WeightMeasure"
+                            id="txt5"
+                        />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem
+                        id="_IDGenColumnListItem1"
+                        vAlign="Middle"
+                        type="Active"
+                        press="onPressRow"
+                    >
+                        <cells>
+                            <Text text="{ProductID}" />
+                            <Text text="{Name}" />
+                            <!-- <Text text="{Price}" /> -->
+                            <ObjectStatus
+                                text="{Price}"
+                                state="{path:'Price',formatter:'.onFormatPrice'}"
+                            />
+                            <Text text="{WeightUnit}" />
+                            <Text text="{WeightMeasure}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>
